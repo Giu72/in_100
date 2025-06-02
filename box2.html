@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Offerta - Più Siamo, Meno Paghiamo!</title>
+  <title>OFFERTA: 2 Pizze Gourmet a -43% | Più Siamo, Meno Paghiamo!</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Quicksand:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -26,7 +26,7 @@
     header h1 {
       font-family: 'Quicksand', sans-serif;
       font-size: 2.5rem;
-      margin: 0;
+      margin: 0 0 10px 0;
     }
 
     .back-home {
@@ -40,11 +40,12 @@
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s;
+      transition: all 0.3s;
     }
 
     .back-home:hover {
       background: #f0f0f0;
+      transform: translateX(-3px);
     }
 
     .container {
@@ -60,6 +61,11 @@
       width: 100%;
       text-align: center;
       padding: 20px;
+      position: relative;
+    }
+
+    .main-image {
+      position: relative;
     }
 
     .main-image img {
@@ -68,6 +74,18 @@
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .image-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(231, 76, 60, 0.9);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
     }
 
     .thumbnails {
@@ -86,6 +104,7 @@
       cursor: pointer;
       opacity: 0.6;
       transition: transform 0.2s, opacity 0.3s;
+      position: relative;
     }
 
     .thumbnails img:hover,
@@ -93,6 +112,22 @@
       opacity: 1;
       transform: scale(1.05);
       border: 2px solid #00b894;
+    }
+
+    .thumbnail-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #f1c40f;
+      color: #000;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
     }
 
     .content {
@@ -103,103 +138,340 @@
       font-size: 1.8rem;
       margin-bottom: 15px;
       color: #0083b0;
+      text-align: center;
+    }
+
+    .price-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .current-price {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    .original-price {
+      font-size: 1.5rem;
+      text-decoration: line-through;
+      color: #95a5a6;
+      margin-left: 10px;
+    }
+
+    .discount-badge {
+      display: inline-block;
+      background: #f1c40f;
+      color: #000;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-weight: bold;
+      margin-left: 10px;
+      font-size: 0.9rem;
     }
 
     .content p {
       margin-bottom: 15px;
       line-height: 1.6;
+      text-align: center;
     }
 
     .details {
-      background: #e6f5ff;
+      background: #fff8e1;
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 20px;
+      border-left: 4px solid #f1c40f;
     }
 
     .details h3 {
       margin-top: 0;
       color: #0077a3;
+      font-size: 1.3rem;
+    }
+
+    .details ul {
+      padding-left: 20px;
+    }
+
+    .details li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .details li i {
+      color: #e74c3c;
+      margin-right: 8px;
+    }
+
+    .benefits {
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #2ecc71;
+    }
+
+    .participants-message {
+      background: #e74c3c;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .countdown {
+      background: #2c3e50;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .countdown span {
+      color: #f1c40f;
+    }
+
+    .social-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .social-proof img {
+      height: 40px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .social-proof img:hover {
+      opacity: 1;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      border-top: 3px solid #e74c3c;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      color: #e74c3c;
+      text-align: right;
+    }
+
+    .stars {
+      color: #f1c40f;
+      margin-bottom: 5px;
     }
 
     .button-container {
       text-align: center;
-      margin-bottom: 30px;
+      margin: 30px 0;
     }
 
     .button-container button {
-      padding: 14px 30px;
+      padding: 16px 40px;
       background-color: #00b894;
       color: white;
       border: none;
       border-radius: 8px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      transition: all 0.3s;
+      box-shadow: 0 4px 0 #009972;
+      position: relative;
+      overflow: hidden;
     }
 
     .button-container button:hover {
       background-color: #009972;
-      transform: scale(1.03);
+      transform: translateY(-3px);
+      box-shadow: 0 7px 0 #007d5e;
+    }
+
+    .button-container button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #a53125;
+    }
+
+    .guarantee {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+      margin-top: 10px;
+    }
+
+    .guarantee i {
+      color: #2ecc71;
+      margin-right: 5px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .current-price {
+        font-size: 1.8rem;
+      }
+      
+      .original-price {
+        font-size: 1.2rem;
+      }
+      
+      .participants-message {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a href="index.html" class="back-home">← Torna alla Home</a>
-    <h1>Offerta Imperdibile</h1>
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Torna alla Home</a>
+    <h1>OFFERTA IMPERDIBILE</h1>
+    <div class="countdown">⏰ <i class="fas fa-bolt"></i> Scade tra: <span id="timer">23:59:59</span></div>
   </header>
 
   <div class="container">
     <div class="image-gallery">
       <div class="main-image">
-        <img id="current-image" src="https://www.marcobianchi.blog/wp-content/uploads/2023/01/pizza-2048x1365.jpg" alt="Immagine grande">
+        <div class="image-badge">OFFERTA LIMITATA</div>
+        <img id="current-image" src="https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-videoSixteenByNineJumbo1600-v2.jpg" alt="Pizza gourmet">
       </div>
       <div class="thumbnails">
-        <img src="https://www.marcobianchi.blog/wp-content/uploads/2023/01/pizza-2048x1365.jpg" alt="Anteprima 1" class="thumb active" onclick="changeImage(this)">
-        <img src="https://d2sj0xby2hzqoy.cloudfront.net/kenwood_italy/attachments/data/000/010/095/medium/ricetta-pizza-napoletana-garage-pizza.jpg" alt="Anteprima 2" class="thumb" onclick="changeImage(this)">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX2w-6ljxAJtEImAJ4zBsRnou1CoSAVmgvQw&s" alt="Anteprima 3" class="thumb" onclick="changeImage(this)">
+        <img src="https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-videoSixteenByNineJumbo1600-v2.jpg" alt="Pizza Margherita" class="thumb active" onclick="changeImage(this)">
+        <div class="thumbnail-badge"><i class="fas fa-heart"></i></div>
+        <img src="https://www.ilcuoreinpentola.it/wp-content/uploads/2024/03/spaghetti-alla-carbonara-ok.jpeg" alt="Pizza Napoletana" class="thumb" onclick="changeImage(this)">
+        <div class="thumbnail-badge"><i class="fas fa-star"></i></div>
+       <img src="https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/03/Carbonara-ricetta-5328.jpg" alt="Ingredienti freschi" class="thumb" onclick="changeImage(this)">
+        <img src="https://www.yourteamsrl.it/wp-content/uploads/2019/09/arredo-nuovo-locale.jpg" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
       </div>
     </div>
 
     <div class="content">
-      <h2>Pizza Gourmet per 2 Persone</h2>
-      <p>Scopri il gusto autentico della pizza napoletana con ingredienti selezionati. Offerta valida solo per un tempo limitato!</p>
+      <h2>2 Pizze Gourmet + Bibite a SOLO <span class="current-price">€19,90</span> <span class="original-price">€35</span> <span class="discount-badge">-43%</span></h2>
+      
+      <div class="participants-message">
+        <i class="fas fa-users"></i> <b>Se siamo in 20 persone, sblocchiamo l'offerta!</b>
+      </div>
 
-      <div class="details">
-        <h3>Dettagli del Menu:</h3>
+      <p>Approfitta subito di questa offerta esclusiva! Prenota ora per assicurarti il tuo posto!</p>
+      <b><p>La Trattoria del Buon Mangiare</p></b>
+      <p>Ci troviamo in V. Antonio Bertola, 57, 10122 Torino</p>
+      
+
+      <div class="benefits">
+        <h3><i class="fas fa-check-circle"></i> Perché ti conviene?</h3>
         <ul>
-          <li>2 pizze a scelta dal menu</li>
-          <li>2 bibite o birre artigianali</li>
-          <li>Coperto incluso</li>
+          <li><i class="fas fa-piggy-bank"></i> <strong>Risparmi €15,10</strong> rispetto al prezzo normale</li>
+          <li><i class="fas fa-clock"></i> <strong>Prenotazione facile</strong>: 2 minuti e hai il tavolo assicurato</li>
+          <li><i class="fas fa-award"></i> <strong>Ingredienti premium</strong>: Mozzarella di bufala e pomodoro San Marzano DOP</li>
         </ul>
       </div>
 
       <div class="details">
-        <h3>Condizioni:</h3>
+        <h3><i class="fas fa-pizza-slice"></i> Dettagli del Menu:</h3>
         <ul>
-          <li>Offerta valida solo se si raggiunge il numero minimo di 30 partecipanti</li>
-          <li>Scadenza: entro 48 ore</li>
-          <li>Prenotazione obbligatoria</li>
+          <li><i class="fas fa-check"></i> 2 pizze a scelta dal menu gourmet</li>
+          <li><i class="fas fa-check"></i> 2 bibite o birre artigianali italiane</li>
+          <li><i class="fas fa-check"></i> Coperto e servizio inclusi</li>
+          <li><i class="fas fa-check"></i> Impasto lievitato 48 ore</li>
+        </ul>
+      </div>
+
+      <div class="details">
+        <h3><i class="fas fa-exclamation-circle"></i> Condizioni:</h3>
+        <ul>
+          <li><i class="fas fa-stopwatch"></i> Tempo rimanente: 48 ore</li>
+          <li><i class="fas fa-calendar-check"></i> Prenotazione obbligatoria online</li>
+          <li><i class="fas fa-store"></i> Valida solo presso: Pizzeria Napoli Centrale</li>
         </ul>
       </div>
 
       <div class="button-container">
-  <button onclick="window.location.href='index.html#box2'">Partecipa</button>
-</div>
+        <button class="pulse" onclick="window.location.href='index.html#box2'">
+          <i class="fas fa-ticket-alt"></i> PRENOTA ORA - RISPARMIA 43%
+        </button>
+        <div class="guarantee">
+          <i class="fas fa-shield-alt"></i> Cancellazione gratuita fino a 24 ore prima
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
+    // 1. Funzione per cambiare immagine
     function changeImage(element) {
-      const currentImage = document.getElementById("current-image");
-      currentImage.src = element.src;
-
+      document.getElementById("current-image").src = element.src;
       document.querySelectorAll(".thumb").forEach(img => img.classList.remove("active"));
       element.classList.add("active");
     }
+
+    // 2. Timer countdown (48 ore)
+    function startCountdown() {
+      const endTime = new Date();
+      endTime.setHours(endTime.getHours() + 48);
+      
+      const timer = setInterval(() => {
+        const now = new Date();
+        const diff = endTime - now;
+        
+        if (diff <= 0) {
+          clearInterval(timer);
+          document.getElementById("timer").textContent = "OFFERTA SCADUTA";
+          return;
+        }
+        
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById("timer").textContent = 
+          `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }, 1000);
+    }
+
+    // 3. Inizializzazione
+    window.addEventListener('DOMContentLoaded', () => {
+      startCountdown();
+      
+      // Animazione pulsante
+      document.querySelector(".button-container button").addEventListener("click", function() {
+        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Stiamo confermando...';
+        setTimeout(() => {
+          window.location.href = 'index.html#box1';
+        }, 1500);
+      });
+    });
   </script>
 
 </body>

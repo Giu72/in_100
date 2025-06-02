@@ -382,14 +382,14 @@ Solo per chi partecipa all'offerta di gruppo! Affrettati: i posti sono limitati!
 
 <div class="timer-container">
 <i class="fas fa-hourglass-half"></i>
-<div id="countdown1" class="countdown">15:00</div>
+<div id="countdown1" class="countdown">14:00</div>
 </div>
 
 <button class="menu-btn" onclick="window.location.href='box1.html'">Vai al menu</button>
 
 <div class="price-highlight">
 <div class="custom-message">
-<span class="explosive-text">Se siamo in 5, paghiamo solo 25€! <strong>ANZICHÉ 50€</strong></span>
+<span class="explosive-text">Se siamo in 20, paghiamo solo 25€! <strong>ANZICHÉ 50€</strong></span>
 </div>
 </div>
 
@@ -417,7 +417,7 @@ Al momento siamo: <span id="counter1">0</span>
 <!-- BOX 2 -->
 <div class="main-box" id="box2">
 <div class="pizza-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Spaghetti_alla_carbonara.jpg" alt="Carbonara">
+<img src="https://www.ilcuoreinpentola.it/wp-content/uploads/2024/03/spaghetti-alla-carbonara-ok.jpeg" alt="Carbonara">
 </div>
 
 <div class="offer-details">
@@ -437,7 +437,7 @@ Solo per chi partecipa all'offerta di gruppo!
 
 <div class="price-highlight">
 <div class="custom-message">
-<span class="explosive-text">Se siamo in 6, paghiamo solo 30€! <strong>ANZICHÉ 60€</strong></span>
+<span class="explosive-text">Se siamo in 20, paghiamo solo 30€! <strong>ANZICHÉ 60€</strong></span>
 </div>
 </div>
 
@@ -579,7 +579,7 @@ Al momento siamo: <span id="counter2">0</span>
 
     <div class="price-highlight">
         <div class="custom-message">
-            <span class="explosive-text">Se siamo in 8, paghiamo solo 40€! <strong>ANZICHÉ 80€</strong></span>
+            <span class="explosive-text">Se siamo in 20, paghiamo solo 40€! <strong>ANZICHÉ 80€</strong></span>
         </div>
     </div>
 
@@ -1094,7 +1094,7 @@ form: document.getElementById('formPartecipazione1'),
 submitBtn: document.getElementById('submitBtn1'),
 thankYouMessage: document.getElementById('thankYouMessage1'),
 completedMessage: document.getElementById('completedMessage1'),
-requiredParticipants: 5,
+requiredParticipants: 20,
 originalPrice: "50€",
 discountPrice: "25€"
 };
@@ -1291,20 +1291,20 @@ return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
 
 // Inizializzazione timer
 function initializeTimers() {
-    let timeLeft1 = 900; // 15 minuti
-    let timeLeft2 = 900;
-    let timeLeft3 = 900;
-    let timeLeft4 = 900;
-    let timeLeft5 = 900;
-    let timeLeft6 = 900;
-    let timeLeft7 = 900;
-    let timeLeft8 = 900;
-    let timeLeft9 = 900;
-    let timeLeft10 = 900;
-    let timeLeft11 = 900;
-    let timeLeft12 = 900;
-    let timeLeft13 = 900;
-    let timeLeft14 = 900;
+    let timeLeft1 = 3600; // 60 minuti
+    let timeLeft2 = 3600;
+    let timeLeft3 = 3600;
+    let timeLeft4 = 3600;
+    let timeLeft5 = 3600;
+    let timeLeft6 = 3600;
+    let timeLeft7 = 3600;
+    let timeLeft8 = 3600;
+    let timeLeft9 = 3600;
+    let timeLeft10 = 3600;
+    let timeLeft11 = 3600;
+    let timeLeft12 = 3600;
+    let timeLeft13 = 3600;
+    let timeLeft14 = 3600;
 
     // Timer Box 1
     const timer1 = setInterval(() => {

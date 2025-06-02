@@ -212,30 +212,15 @@
       border-left: 4px solid #2ecc71;
     }
 
-    .progress-container {
-      margin: 25px 0;
-    }
-
-    .progress-text {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
+    .participants-message {
+      background: #e74c3c;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
       font-weight: bold;
-    }
-
-    .progress-bar {
-      height: 20px;
-      background: #ecf0f1;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(to right, #e74c3c, #f39c12);
-      width: 85%;
-      border-radius: 10px;
-      transition: width 0.5s;
+      font-size: 1.2rem;
+      margin: 20px 0;
     }
 
     .countdown {
@@ -361,6 +346,10 @@
       .original-price {
         font-size: 1.2rem;
       }
+      
+      .participants-message {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -370,7 +359,6 @@
     <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Torna alla Home</a>
     <h1>OFFERTA IMPERDIBILE</h1>
     <div class="countdown">⏰ <i class="fas fa-bolt"></i> Scade tra: <span id="timer">23:59:59</span></div>
-    <p><i class="fas fa-users"></i> <span id="participants-count">28</span> persone hanno già aderito!</p>
   </header>
 
   <div class="container">
@@ -384,31 +372,27 @@
         <div class="thumbnail-badge"><i class="fas fa-heart"></i></div>
         <img src="https://d2sj0xby2hzqoy.cloudfront.net/kenwood_italy/attachments/data/000/010/095/medium/ricetta-pizza-napoletana-garage-pizza.jpg" alt="Pizza Napoletana" class="thumb" onclick="changeImage(this)">
         <div class="thumbnail-badge"><i class="fas fa-star"></i></div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX2w-6ljxAJtEImAJ4zBsRnou1CoSAVmgvQw&s" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
-        <img src="https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza.jpg" alt="Ingredienti freschi" class="thumb" onclick="changeImage(this)">
+       <img src="https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza.jpg" alt="Ingredienti freschi" class="thumb" onclick="changeImage(this)">
+        <img src="https://www.yourteamsrl.it/wp-content/uploads/2019/09/arredo-nuovo-locale.jpg" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
       </div>
     </div>
 
     <div class="content">
       <h2>2 Pizze Gourmet + Bibite a SOLO <span class="current-price">€19,90</span> <span class="original-price">€35</span> <span class="discount-badge">-43%</span></h2>
       
-      <div class="progress-container">
-        <div class="progress-text">
-          <span><i class="fas fa-trophy"></i> Se Siamo in <span id="remaining-participants">5</span> persone, SBLOCCHIAMO L'OFFERTA</span>
-          <span id="progress-percentage">85%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
+      <div class="participants-message">
+        <i class="fas fa-users"></i> <b>Se siamo in 20 persone, sblocchiamo l'offerta!</b>
       </div>
 
-      <p>Unisciti al gruppo e approfitta subito di questa offerta esclusiva! Più persone partecipano, più risparmi!</p>
+      <p>Approfitta subito di questa offerta esclusiva! Prenota ora per assicurarti il tuo posto!</p>
+      <b><p>La Trattoria del Buon Mangiare</p></b>
+      <p>Ci troviamo in V. Antonio Bertola, 57, 10122 Torino</p>
+      
 
       <div class="benefits">
         <h3><i class="fas fa-check-circle"></i> Perché ti conviene?</h3>
         <ul>
           <li><i class="fas fa-piggy-bank"></i> <strong>Risparmi €15,10</strong> rispetto al prezzo normale</li>
-          <li><i class="fas fa-users"></i> <strong>Comunità garantita</strong>: 30+ prenotazioni già confermate</li>
           <li><i class="fas fa-clock"></i> <strong>Prenotazione facile</strong>: 2 minuti e hai il tavolo assicurato</li>
           <li><i class="fas fa-award"></i> <strong>Ingredienti premium</strong>: Mozzarella di bufala e pomodoro San Marzano DOP</li>
         </ul>
@@ -424,16 +408,9 @@
         </ul>
       </div>
 
-      
-        
-      
-      
-
-      
       <div class="details">
         <h3><i class="fas fa-exclamation-circle"></i> Condizioni:</h3>
         <ul>
-          <li><i class="fas fa-user-friends"></i> Offerta valida solo con minimo 30 partecipanti</li>
           <li><i class="fas fa-stopwatch"></i> Tempo rimanente: 48 ore</li>
           <li><i class="fas fa-calendar-check"></i> Prenotazione obbligatoria online</li>
           <li><i class="fas fa-store"></i> Valida solo presso: Pizzeria Napoli Centrale</li>
@@ -452,10 +429,6 @@
   </div>
 
   <script>
-    // URL del tuo Google Apps Script
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjx69GSrQRBqU16kuAF9jCtRPX2BGEz1KnwfFlMZr2mWNq9Fea1rodeV-LuHPxBzHL/exec';
-    const MIN_PARTICIPANTS = 5;
-
     // 1. Funzione per cambiare immagine
     function changeImage(element) {
       document.getElementById("current-image").src = element.src;
@@ -487,53 +460,9 @@
       }, 1000);
     }
 
-    // 3. Ottieni partecipanti reali da Google Apps Script
-  async function fetchParticipants() {
-  try {
-    const response = await fetch(SCRIPT_URL);
-    const data = await response.json();
-
-    const participants = data.count || 0;
-    const remaining = Math.max(0, MIN_PARTICIPANTS - participants);
-    const progress = Math.min(100, (participants / MIN_PARTICIPANTS) * 100);
-
-    // Aggiorna i contenuti visivi
-    document.getElementById("participants-count").textContent = participants;
-    document.getElementById("progress-fill").style.width = `${progress}%`;
-    document.getElementById("progress-percentage").textContent = `${Math.round(progress)}%`;
-    document.getElementById("remaining-participants").textContent = remaining;
-
-    // Verifica se l'offerta è conclusa
-    if (participants >= MIN_PARTICIPANTS) {
-      // Disabilita il bottone
-      const button = document.querySelector(".button-container button");
-      button.disabled = true;
-      button.style.backgroundColor = "#ccc";
-      button.style.cursor = "not-allowed";
-      button.innerHTML = '<i class="fas fa-lock"></i> Offerta Conclusa';
-
-      // Mostra messaggio nell’header
-      document.querySelector(".countdown").innerHTML =
-        '<i class="fas fa-check-circle"></i> Offerta CONCLUSA – Numero massimo raggiunto!';
-    }
-
-    return participants;
-  } catch (error) {
-    console.error("Errore nel recupero partecipanti:", error);
-    return 0;
-  }
-}
-
-
-    // 4. Inizializzazione
-    window.addEventListener('DOMContentLoaded', async () => {
+    // 3. Inizializzazione
+    window.addEventListener('DOMContentLoaded', () => {
       startCountdown();
-      
-      // Prima chiamata
-      await fetchParticipants();
-      
-      // Aggiorna ogni 15 secondi
-      setInterval(fetchParticipants, 15000);
       
       // Animazione pulsante
       document.querySelector(".button-container button").addEventListener("click", function() {
