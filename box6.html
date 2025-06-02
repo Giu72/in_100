@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offerta - Più Siamo, Meno Paghiamo!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f2f7fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .back-home {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: white;
+      color: #0083b0;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .back-home:hover {
+      background: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .image-gallery {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .main-image img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .thumbnails {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .thumbnails img {
+      width: 100px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: transform 0.2s, opacity 0.3s;
+    }
+
+    .thumbnails img:hover,
+    .thumbnails img.active {
+      opacity: 1;
+      transform: scale(1.05);
+      border: 2px solid #00b894;
+    }
+
+    .content {
+      padding: 25px 20px;
+    }
+
+    .content h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #0083b0;
+    }
+
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .details {
+      background: #e6f5ff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .details h3 {
+      margin-top: 0;
+      color: #0077a3;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .button-container button {
+      padding: 14px 30px;
+      background-color: #00b894;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .button-container button:hover {
+      background-color: #009972;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-home">← Torna alla Home</a>
+    <h1>Offerta Imperdibile</h1>
+  </header>
+
+  <div class="container">
+    <div class="image-gallery">
+      <div class="main-image">
+        <img id="current-image" src="https://www.marcobianchi.blog/wp-content/uploads/2023/01/pizza-2048x1365.jpg" alt="Immagine grande">
+      </div>
+      <div class="thumbnails">
+        <img src="https://www.marcobianchi.blog/wp-content/uploads/2023/01/pizza-2048x1365.jpg" alt="Anteprima 1" class="thumb active" onclick="changeImage(this)">
+        <img src="https://d2sj0xby2hzqoy.cloudfront.net/kenwood_italy/attachments/data/000/010/095/medium/ricetta-pizza-napoletana-garage-pizza.jpg" alt="Anteprima 2" class="thumb" onclick="changeImage(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX2w-6ljxAJtEImAJ4zBsRnou1CoSAVmgvQw&s" alt="Anteprima 3" class="thumb" onclick="changeImage(this)">
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Pizza Gourmet per 2 Persone</h2>
+      <p>Scopri il gusto autentico della pizza napoletana con ingredienti selezionati. Offerta valida solo per un tempo limitato!</p>
+
+      <div class="details">
+        <h3>Dettagli del Menu:</h3>
+        <ul>
+          <li>2 pizze a scelta dal menu</li>
+          <li>2 bibite o birre artigianali</li>
+          <li>Coperto incluso</li>
+        </ul>
+      </div>
+
+      <div class="details">
+        <h3>Condizioni:</h3>
+        <ul>
+          <li>Offerta valida solo se si raggiunge il numero minimo di 30 partecipanti</li>
+          <li>Scadenza: entro 48 ore</li>
+          <li>Prenotazione obbligatoria</li>
+        </ul>
+      </div>
+
+      <div class="button-container">
+                <button onclick="window.location.href='index.html#box6'">Partecipa</button>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function changeImage(element) {
+      const currentImage = document.getElementById("current-image");
+      currentImage.src = element.src;
+
+      document.querySelectorAll(".thumb").forEach(img => img.classList.remove("active"));
+      element.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
