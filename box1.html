@@ -7,13 +7,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Quicksand:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    /* RESET E STILI BASE */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    
+    body {
       font-family: 'Open Sans', sans-serif;
       background: #f2f7fb;
       color: #333;
+      line-height: 1.6;
     }
 
+    /* HEADER */
     header {
       background: linear-gradient(to right, #00b4db, #0083b0);
       color: white;
@@ -48,6 +56,22 @@
       transform: translateX(-3px);
     }
 
+    .countdown {
+      background: #2c3e50;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      margin: 20px auto;
+      max-width: 300px;
+    }
+
+    .countdown span {
+      color: #f1c40f;
+    }
+
+    /* CONTAINER PRINCIPALE */
     .container {
       max-width: 800px;
       margin: 30px auto;
@@ -57,23 +81,29 @@
       overflow: hidden;
     }
 
+    /* GALLERIA IMMAGINI */
     .image-gallery {
       width: 100%;
-      text-align: center;
       padding: 20px;
       position: relative;
     }
 
     .main-image {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 400px;
     }
 
     .main-image img {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .image-badge {
@@ -103,8 +133,7 @@
       border-radius: 6px;
       cursor: pointer;
       opacity: 0.6;
-      transition: transform 0.2s, opacity 0.3s;
-      position: relative;
+      transition: all 0.3s;
     }
 
     .thumbnails img:hover,
@@ -130,6 +159,7 @@
       font-weight: bold;
     }
 
+    /* CONTENUTO */
     .content {
       padding: 25px 20px;
     }
@@ -172,10 +202,10 @@
 
     .content p {
       margin-bottom: 15px;
-      line-height: 1.6;
       text-align: center;
     }
 
+    /* SEZIONI */
     .details {
       background: #fff8e1;
       padding: 15px;
@@ -223,20 +253,7 @@
       margin: 20px 0;
     }
 
-    .countdown {
-      background: #2c3e50;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    .countdown span {
-      color: #f1c40f;
-    }
-
+    /* SOCIAL E TESTIMONIAL */
     .social-proof {
       display: flex;
       align-items: center;
@@ -281,6 +298,7 @@
       margin-bottom: 5px;
     }
 
+    /* PULSANTE */
     .button-container {
       text-align: center;
       margin: 30px 0;
@@ -324,6 +342,7 @@
       margin-right: 5px;
     }
 
+    /* ANIMAZIONI */
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.03); }
@@ -334,6 +353,7 @@
       animation: pulse 2s infinite;
     }
 
+    /* MEDIA QUERIES */
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.8rem;
@@ -350,6 +370,20 @@
       .participants-message {
         font-size: 1rem;
       }
+      
+      .main-image {
+        height: 250px;
+      }
+      
+      .thumbnails img {
+        width: 80px;
+        height: 50px;
+      }
+      
+      .button-container button {
+        padding: 14px 30px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -365,61 +399,65 @@
     <div class="image-gallery">
       <div class="main-image">
         <div class="image-badge">OFFERTA LIMITATA</div>
-        <img id="current-image" src="https://www.marcobianchi.blog/wp-content/uploads/2023/01/pizza-2048x1365.jpg" alt="Pizza gourmet">
+        <img id="current-image" src="https://www.mamablip.com/storage/Traditional-Spaghetti-alla-Carbonara_1131611747132.jpg" alt="Pizza gourmet">
       </div>
       <div class="thumbnails">
-        <img src="https://www.marcobianchi.blog/wp-content/uploads/2023/01/pizza-2048x1365.jpg" alt="Pizza Margherita" class="thumb active" onclick="changeImage(this)">
+        <img src="https://www.mamablip.com/storage/Traditional-Spaghetti-alla-Carbonara_1131611747132.jpg" alt="Pizza Margherita" class="thumb active" onclick="changeImage(this)">
         <div class="thumbnail-badge"><i class="fas fa-heart"></i></div>
-        <img src="https://d2sj0xby2hzqoy.cloudfront.net/kenwood_italy/attachments/data/000/010/095/medium/ricetta-pizza-napoletana-garage-pizza.jpg" alt="Pizza Napoletana" class="thumb" onclick="changeImage(this)">
+        <img src="https://www.repstatic.it/content/nazionale/img/2020/01/17/132620237-02f28e51-53c0-40b7-9f1c-fa1ce40307d7.jpg" alt="Pizza Napoletana" class="thumb" onclick="changeImage(this)">
         <div class="thumbnail-badge"><i class="fas fa-star"></i></div>
-       <img src="https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza.jpg" alt="Ingredienti freschi" class="thumb" onclick="changeImage(this)">
-        <img src="https://www.yourteamsrl.it/wp-content/uploads/2019/09/arredo-nuovo-locale.jpg" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
+        <img src="https://roma.corriere.it/methode_image/2020/04/04/Roma/Foto%20Roma%20-%20Trattate/314.0.1168935179-kNsF-U3180183569105rAI-656x492@Corriere-Web-Roma.jpg" alt="Ingredienti freschi" class="thumb" onclick="changeImage(this)">
+        <img src="https://www.lacucinaimperfetta.com/wp-content/uploads/2018/01/Spaghetti-alla-carbonara.jpg" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
+        <img src="https://freight.cargo.site/w/1102/i/56b1bd35ac438e807a2c4892d297b87f1e9d1470e31fe19c1cfca09a45b61618/36337852_971240829712673_4669508686392066048_o.jpg" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
+        <img src="https://freight.cargo.site/w/1500/i/b52d6016af817cbbbba0339a583d7a22c2fb831baacda8639716007885191574/IMG20210409110530.jpg" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
       </div>
     </div>
 
     <div class="content">
-      <h2>2 Pizze Gourmet + Bibite a SOLO <span class="current-price">€19,90</span> <span class="original-price">€35</span> <span class="discount-badge">-43%</span></h2>
+      <h2>Carbonara di Tonnara per 2 persone,<span class="current-price"><b>€22</b></span> <span class="original-price"><S>Anzichè€35</S></span> </h2>
       
       <div class="participants-message">
         <i class="fas fa-users"></i> <b>Se siamo in 20 persone, sblocchiamo l'offerta!</b>
       </div>
 
       <p>Approfitta subito di questa offerta esclusiva! Prenota ora per assicurarti il tuo posto!</p>
-      <b><p>La Trattoria del Buon Mangiare</p></b>
-      <p>Ci troviamo in V. Antonio Bertola, 57, 10122 Torino</p>
+      <b><p>Pastis Torino </p></b>
+      <p>Piazza Emanuele Filiberto, Torino 9</p>
       
 
       <div class="benefits">
         <h3><i class="fas fa-check-circle"></i> Perché ti conviene?</h3>
         <ul>
-          <li><i class="fas fa-piggy-bank"></i> <strong>Risparmi €15,10</strong> rispetto al prezzo normale</li>
-          <li><i class="fas fa-clock"></i> <strong>Prenotazione facile</strong>: 2 minuti e hai il tavolo assicurato</li>
-          <li><i class="fas fa-award"></i> <strong>Ingredienti premium</strong>: Mozzarella di bufala e pomodoro San Marzano DOP</li>
+          <li><i class="fas fa-piggy-bank"></i> <strong>Risparmi €13</strong> rispetto al prezzo normale</li>
+          <i class="fas fa-medal"></i>
+
+ <strong>Risparmi di più, senza rinunciare alla qualità:</strong> il gusto è lo stesso, ma il conto è più leggero!</li>
+          <li><i class="fas fa-award"></i> <strong>Ingredienti premium:</strong>  selezionati dai migliori locali della città</li>
         </ul>
       </div>
 
       <div class="details">
         <h3><i class="fas fa-pizza-slice"></i> Dettagli del Menu:</h3>
         <ul>
-          <li><i class="fas fa-check"></i> 2 pizze a scelta dal menu gourmet</li>
-          <li><i class="fas fa-check"></i> 2 bibite o birre artigianali italiane</li>
+          <li><i class="fas fa-check"></i> 2 porzioni di Carbonara di Tonnara</li>
+          <li><i class="fas fa-check"></i> 2 calici di vino o birra artigianale italiana</li>
           <li><i class="fas fa-check"></i> Coperto e servizio inclusi</li>
-          <li><i class="fas fa-check"></i> Impasto lievitato 48 ore</li>
+          
         </ul>
       </div>
 
       <div class="details">
         <h3><i class="fas fa-exclamation-circle"></i> Condizioni:</h3>
         <ul>
-          <li><i class="fas fa-stopwatch"></i> Tempo rimanente: 48 ore</li>
-          <li><i class="fas fa-calendar-check"></i> Prenotazione obbligatoria online</li>
-          <li><i class="fas fa-store"></i> Valida solo presso: Pizzeria Napoli Centrale</li>
+          <li><i class="fas fa-stopwatch"></i> Offerta valida per un periodo limitato – non perdere l'occasione!</li>
+          <li><i class="fas fa-calendar-check"></i> Prenotazione obbligatoria </li>
+          <li><i class="fas fa-store"></i> Valida solo presso: Pastis Torino</li>
         </ul>
       </div>
 
       <div class="button-container">
         <button class="pulse" onclick="window.location.href='index.html#box1'">
-          <i class="fas fa-ticket-alt"></i> PRENOTA ORA - RISPARMIA 43%
+          <i class="fas fa-ticket-alt"></i> PARTECIPA ORA & RISPARMIA 
         </button>
         <div class="guarantee">
           <i class="fas fa-shield-alt"></i> Cancellazione gratuita fino a 24 ore prima
