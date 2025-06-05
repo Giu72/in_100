@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OFFERTA: 2 Pizze Gourmet a -43% | Più Siamo, Meno Paghiamo!</title>
+  <title>Golden Euphoria" – L’Aperitivo Dorato | Più Siamo, Meno Paghiamo!</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Quicksand:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    /* RESET E STILI BASE */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    
+    body {
       font-family: 'Open Sans', sans-serif;
       background: #f2f7fb;
       color: #333;
+      line-height: 1.6;
     }
 
+    /* HEADER */
     header {
       background: linear-gradient(to right, #00b4db, #0083b0);
       color: white;
@@ -48,6 +56,22 @@
       transform: translateX(-3px);
     }
 
+    .countdown {
+      background: #2c3e50;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      margin: 20px auto;
+      max-width: 300px;
+    }
+
+    .countdown span {
+      color: #f1c40f;
+    }
+
+    /* CONTAINER PRINCIPALE */
     .container {
       max-width: 800px;
       margin: 30px auto;
@@ -57,23 +81,29 @@
       overflow: hidden;
     }
 
+    /* GALLERIA IMMAGINI */
     .image-gallery {
       width: 100%;
-      text-align: center;
       padding: 20px;
       position: relative;
     }
 
     .main-image {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 400px;
     }
 
     .main-image img {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .image-badge {
@@ -103,8 +133,7 @@
       border-radius: 6px;
       cursor: pointer;
       opacity: 0.6;
-      transition: transform 0.2s, opacity 0.3s;
-      position: relative;
+      transition: all 0.3s;
     }
 
     .thumbnails img:hover,
@@ -130,6 +159,7 @@
       font-weight: bold;
     }
 
+    /* CONTENUTO */
     .content {
       padding: 25px 20px;
     }
@@ -172,10 +202,10 @@
 
     .content p {
       margin-bottom: 15px;
-      line-height: 1.6;
       text-align: center;
     }
 
+    /* SEZIONI */
     .details {
       background: #fff8e1;
       padding: 15px;
@@ -223,20 +253,7 @@
       margin: 20px 0;
     }
 
-    .countdown {
-      background: #2c3e50;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    .countdown span {
-      color: #f1c40f;
-    }
-
+    /* SOCIAL E TESTIMONIAL */
     .social-proof {
       display: flex;
       align-items: center;
@@ -281,6 +298,7 @@
       margin-bottom: 5px;
     }
 
+    /* PULSANTE */
     .button-container {
       text-align: center;
       margin: 30px 0;
@@ -324,6 +342,7 @@
       margin-right: 5px;
     }
 
+    /* ANIMAZIONI */
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.03); }
@@ -334,6 +353,7 @@
       animation: pulse 2s infinite;
     }
 
+    /* MEDIA QUERIES */
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.8rem;
@@ -350,6 +370,20 @@
       .participants-message {
         font-size: 1rem;
       }
+      
+      .main-image {
+        height: 250px;
+      }
+      
+      .thumbnails img {
+        width: 80px;
+        height: 50px;
+      }
+      
+      .button-container button {
+        padding: 14px 30px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -358,68 +392,74 @@
   <header>
     <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Torna alla Home</a>
     <h1>OFFERTA IMPERDIBILE</h1>
-    <div class="countdown">⏰ <i class="fas fa-bolt"></i> Scade tra: <span id="timer">23:59:59</span></div>
+    <div class="countdown">⏰ <i class="fas fa-bolt"></i> Scade tra: <span id="timer">00:59:59</span></div>
   </header>
 
   <div class="container">
     <div class="image-gallery">
       <div class="main-image">
         <div class="image-badge">OFFERTA LIMITATA</div>
-        <img id="current-image" src="https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-videoSixteenByNineJumbo1600-v2.jpg" alt="Pizza gourmet">
+        <img id="current-image" src="https://i.pinimg.com/736x/3f/12/9a/3f129a411fa347b9bbff63897167fbcc.jpg" alt="Pizza gourmet">
       </div>
       <div class="thumbnails">
-        <img src="https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-videoSixteenByNineJumbo1600-v2.jpg" alt="Pizza Margherita" class="thumb active" onclick="changeImage(this)">
+        <img src="https://i.pinimg.com/736x/3f/12/9a/3f129a411fa347b9bbff63897167fbcc.jpg" alt="Golden Euphoria" class="thumb active" onclick="changeImage(this)">
         <div class="thumbnail-badge"><i class="fas fa-heart"></i></div>
-        <img src="https://www.ilcuoreinpentola.it/wp-content/uploads/2024/03/spaghetti-alla-carbonara-ok.jpeg" alt="Pizza Napoletana" class="thumb" onclick="changeImage(this)">
+        <img src="https://i.pinimg.com/736x/d1/23/4a/d1234adc8af880311197cd3304d9319b.jpg" alt="Golden Euphoria" class="thumb" onclick="changeImage(this)">
         <div class="thumbnail-badge"><i class="fas fa-star"></i></div>
-       <img src="https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/03/Carbonara-ricetta-5328.jpg" alt="Ingredienti freschi" class="thumb" onclick="changeImage(this)">
-        <img src="https://www.yourteamsrl.it/wp-content/uploads/2019/09/arredo-nuovo-locale.jpg" alt="Pizza in forno a legna" class="thumb" onclick="changeImage(this)">
+        <img src="https://i.pinimg.com/736x/a5/a0/be/a5a0be39f6e954dd34a16eb622d640d2.jpg" alt="Golden Euphoria" class="thumb" onclick="changeImage(this)">
+        <img src="https://i.pinimg.com/736x/28/f7/87/28f78730eaf8b338cacd7cc39c290abf.jpg" alt="Golden Euphoria" class="thumb" onclick="changeImage(this)">
+        <img src="https://i.pinimg.com/736x/f0/ce/c3/f0cec3a0ce2abf651381327f0962d259.jpg" alt="Golden Euphoria" class="thumb" onclick="changeImage(this)">
+        <img src="https://i.pinimg.com/736x/2e/be/ee/2ebeee2c6c81443e97ad354a201b59e1.jpg" alt="Golden Euphoria" class="thumb" onclick="changeImage(this)">
+         <img src="https://i.pinimg.com/736x/32/06/d3/3206d36c76e7b711b91ab5da49996e9b.jpg" alt="Golden Euphoria" class="thumb" onclick="changeImage(this)">
       </div>
     </div>
 
     <div class="content">
-      <h2>2 Pizze Gourmet + Bibite a SOLO <span class="current-price">€19,90</span> <span class="original-price">€35</span> <span class="discount-badge">-43%</span></h2>
+      <h2>Cocktail "Golden Euphoria" Per 2 Persone<span class="current-price"> <br><b>€25</b></span> <span class="original-price"><S>Anzichè €50</S></span> </h2>
       
       <div class="participants-message">
         <i class="fas fa-users"></i> <b>Se siamo in 20 persone, sblocchiamo l'offerta!</b>
       </div>
 
-      <p>Approfitta subito di questa offerta esclusiva! Prenota ora per assicurarti il tuo posto!</p>
-      <b><p>La Trattoria del Buon Mangiare</p></b>
-      <p>Ci troviamo in V. Antonio Bertola, 57, 10122 Torino</p>
+      <p>Approfitta subito di questa offerta esclusiva! Partecipa  ora per assicurarti il tuo posto!</p>
+      <p><b>L'ORO DI NAPOLI</b> / Vico dei Sospiri 8, Napoli </p>
+    
       
 
       <div class="benefits">
-        <h3><i class="fas fa-check-circle"></i> Perché ti conviene?</h3>
+        <h3><i class="fas fa-cocktail"></i>
+Il Cocktail:</h3>
         <ul>
-          <li><i class="fas fa-piggy-bank"></i> <strong>Risparmi €15,10</strong> rispetto al prezzo normale</li>
-          <li><i class="fas fa-clock"></i> <strong>Prenotazione facile</strong>: 2 minuti e hai il tavolo assicurato</li>
-          <li><i class="fas fa-award"></i> <strong>Ingredienti premium</strong>: Mozzarella di bufala e pomodoro San Marzano DOP</li>
+         <strong>Base:</strong> Rum añejo 12 anni (come Zacapa 23), per note di vaniglia, caramello e spezie morbide.<br>
+          <strong>Cuore: </strong>Vermouth bianco aromatizzato allo zafferano e un tocco di Cointreau Noir per agrumi profondi.<br>
+           <strong>Tocco finale: </strong>2 gocce di bitter al cioccolato (come Xocolatl Mole) e una spruzzata di acqua di rose, servito con una scaglia d’oro commestibile che si scioglie al primo sorso.<br>
+        <strong>Presentato: </strong>iI un calice a tulipano con ghiaccio sferico scavato, contenente un fiore di gelsomino ghiacciato all’interno.
+        
         </ul>
       </div>
 
       <div class="details">
-        <h3><i class="fas fa-pizza-slice"></i> Dettagli del Menu:</h3>
+        <h3><i class="fas fa-pizza-slice"></i> L'Accompagnamento:</h3>
         <ul>
-          <li><i class="fas fa-check"></i> 2 pizze a scelta dal menu gourmet</li>
-          <li><i class="fas fa-check"></i> 2 bibite o birre artigianali italiane</li>
-          <li><i class="fas fa-check"></i> Coperto e servizio inclusi</li>
-          <li><i class="fas fa-check"></i> Impasto lievitato 48 ore</li>
+          <li><i class="fas fa-check"></i> Carpaccio di polpo con crema all’olio d’oliva al bergamotto e caviale di melanzana.</li>
+          <li><i class="fas fa-check"></i> Crostini neri (al carbone vegetale) con burrata di bufala e tartufo nero estivo.</li>
+          <li><i class="fas fa-check"></i> Sfera di foie gras avvolta in una glassa di miele di castagno e pistacchi di Bronte.</li>
+           <li><i class="fas fa-check"></i> Frutti esotici caramellati (ananas, mango) con polvere di peperoncino di Tahiti.</li>
         </ul>
       </div>
 
       <div class="details">
         <h3><i class="fas fa-exclamation-circle"></i> Condizioni:</h3>
         <ul>
-          <li><i class="fas fa-stopwatch"></i> Tempo rimanente: 48 ore</li>
-          <li><i class="fas fa-calendar-check"></i> Prenotazione obbligatoria online</li>
-          <li><i class="fas fa-store"></i> Valida solo presso: Pizzeria Napoli Centrale</li>
+          <li><i class="fas fa-stopwatch"></i> Offerta valida per un periodo limitato – non perdere l'occasione!</li>
+          <li><i class="fas fa-calendar-check"></i> Prenotazione obbligatoria </li>
+          <li><i class="fas fa-store"></i> Valida solo presso: L'ORO DI NAPOLI</li>
         </ul>
       </div>
 
       <div class="button-container">
         <button class="pulse" onclick="window.location.href='index.html#box2'">
-          <i class="fas fa-ticket-alt"></i> PRENOTA ORA - RISPARMIA 43%
+          <i class="fas fa-ticket-alt"></i> PARTECIPA ORA & RISPARMIA 
         </button>
         <div class="guarantee">
           <i class="fas fa-shield-alt"></i> Cancellazione gratuita fino a 24 ore prima
@@ -439,7 +479,7 @@
     // 2. Timer countdown (48 ore)
     function startCountdown() {
       const endTime = new Date();
-      endTime.setHours(endTime.getHours() + 48);
+      endTime.setHours(endTime.getHours() + 1);
       
       const timer = setInterval(() => {
         const now = new Date();
