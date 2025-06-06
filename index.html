@@ -22,13 +22,19 @@ line-height: 1.6;
 }
 
 /* HEADER */
+
 header {
-background: linear-gradient(to right, #00b4db, #0083b0);
-color: white;
-padding: 50px 20px 30px;
-text-align: center;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    color: white;
+    padding: 50px 20px 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;  /* Aggiungi questa riga */
+    top: 0;            /* Aggiungi questa riga */
+    z-index: 100;      /* Aggiungi questa riga */
+}    
+    
+
 
 header h1 {
 font-family: 'Quicksand', sans-serif;
@@ -373,7 +379,7 @@ margin-bottom: 10px;
 </div>
 
 <div class="offer-details">
-<h2 class="offer-title">Coktail per Due Persone<br>"Sunset Serenade" </h2>
+<h2 class="offer-title">Coktail per 2 Persone<br>"Sunset Serenade" </h2>
 <p class="offer-description">
 
 
@@ -425,7 +431,7 @@ Al momento siamo: <span id="counter1">0</span>
 </div>
 
 <div class="offer-details">
-<h2 class="offer-title">Coktail per Due Persone<br>"Golden Euphoria"</h2>
+<h2 class="offer-title">Coktail per 2 Persone<br>"Golden Euphoria"</h2>
 <p class="offer-description">
 Il Golden Euphoria è un viaggio nel lusso discreto: il rum añejo dialoga con la terra e i fiori, 
     mentre gli abbinamenti sfidano le aspettative con contrasti audaci. Perfetto per celebrare un anniversario o un traguardo, 
@@ -521,9 +527,9 @@ Al momento siamo: <span id="counter2">0</span>
     </div>
 
     <div class="offer-details">
-        <h2 class="offer-title">Apericena per Due Persone<br>"Luna di Miele in Blu"</h2>
+        <h2 class="offer-title">Cocktail per 2 Persone<br>"Luna di Miele"</h2>
         <p class="offer-description">
-         Luna di Miele in Blu è un’esperienza unica: Un tributo all'amore che non ha bisogno di parole, dove il lusso si misura in emozioni condivise.
+         Luna di Miele è un’esperienza unica: Un tributo all'amore che non ha bisogno di parole, dove il lusso si misura in emozioni condivise.
         </p>
     </div>
 
@@ -562,28 +568,31 @@ Al momento siamo: <span id="counter2">0</span>
 </div>
 
 
-<div class="main-box">
+    
+ <!-- BOX 5 -->   
+    
+<div class="main-box" id="box5">
     <div class="pizza-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Sushi_platter.jpg" alt="Sushi">
+        <img src="https://i.pinimg.com/736x/db/8e/e6/db8ee6c0df08c6a7b27bebe1bdbd7ab9.jpg" alt="Sushi">
     </div>
 
     <div class="offer-details">
-        <h2 class="offer-title">Sushi per 2</h2>
+        <h2 class="offer-title">Cocktail per 4 Persone<br>"Notte di Stelle"</h2>
         <p class="offer-description">
-            Un assortimento di sushi fresco, 2 zuppe miso e 2 tè verdi. Un'esperienza giapponese autentica!
+            Un'esperienza che unisce i sapori del mare alla magia di una serata estiva sotto le stelle.
         </p>
     </div>
 
     <div class="timer-container">
         <i class="fas fa-hourglass-half"></i>
-        <div id="countdown5" class="countdown">15:00</div>
+        <div id="countdown5" class="countdown">60:00</div>
     </div>
 
     <button class="menu-btn" onclick="window.location.href='box5.html'">Vai al menu</button>
 
     <div class="price-highlight">
         <div class="custom-message">
-            <span class="explosive-text">Se siamo in 20, paghiamo solo 40€! <strong>ANZICHÉ 80€</strong></span>
+            <span class="explosive-text">Se siamo in 30, paghiamo solo 210€! <strong><s>ANZICHÉ 240€</s></strong></span>
         </div>
     </div>
 
